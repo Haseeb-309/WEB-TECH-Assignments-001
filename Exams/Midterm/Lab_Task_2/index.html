@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/">
+            <h1>Registration</h1>
+
+            <input id="username" name="username" type="text" placeholder="Enter username*">
+            <span class="error" id="usernameError"></span>
+
+            <input id="email" name="email" type="text" placeholder="Enter email">
+            <span class="error" id="emailError"></span>
+
+            <input id="phone" name="phone" type="text" placeholder="Enter phone number">
+            <span class="error" id="phoneError"></span>
+
+            <input id="password" name="password" type="password" placeholder="Enter Password">
+            <span class="error" id="passwordError"></span>
+
+            <input id="password2" name="password2" type="password" placeholder="Enter Password Again">
+            <span class="error" id="password2Error"></span>
+
+            <input id="address" name="address" type="text" placeholder="Enter Address">
+            <span class="error" id="addressError"></span>
+
+            <input type="text" id="cardNumber" placeholder="Enter Credit Card Number" pattern="\d{16}" maxlength="16" title="Credit Card Number must be 16 digits (only numbers allowed)">
+            <span class="error" id="cardError"></span>
+
+            <input type="text" id="cvv" placeholder="Enter CVV" pattern="\d{3}" maxlength="3" title="CVV should be 3 digits">
+            <span class="error" id="cvvError"></span>
+
+            <input id="expiry" name="expiry" type="month" placeholder="Enter Expiry Date">
+            <span class="error" id="expiryError"></span>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script defer src="index.js"></script>    
+</body>
+</html>
