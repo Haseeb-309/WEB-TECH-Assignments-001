@@ -1,0 +1,64 @@
+// const Product = require('./models/productmodel');
+
+// server.get('/products', async (req, res) => {
+//   try {
+//     const products = await Product.find({});
+//     const formattedProducts = products.map(p => ({
+//       id: p._id,
+//       title: p.title,
+//       price: p.price,
+//       image: p.imageUrl
+//     }));
+
+//     res.render('products', { products: formattedProducts });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Failed to load products');
+//   }
+// });
+
+
+
+
+const Order = require('./models/order'); 
+
+
+// server.get("/my-orders", (req, res) => {
+//   if (!req.session.user) {
+//     return res.redirect('/login');
+//   }
+
+//   const sessionCart = req.session.cart || [];
+//   const totalCost = sessionCart.reduce((sum, item) => {
+//     return sum + item.price * item.quantity;
+//   }, 0);
+
+//   res.render("my-orders", { sessionCart, totalCost}); 
+// });
+
+
+
+// server.get('/orderconfirmed', async (req, res) => {
+//   if (!req.session.user) {
+//     return res.redirect('/login');
+//   }
+
+//   try {
+//     const userOrders = await Order.find({ email: req.session.user.email }).sort({ createdAt: -1 });
+
+//     res.render('orderconfirmed', { orders: userOrders });
+//   } catch (error) {
+//     console.error('Error fetching orders:', error);
+//     res.status(500).send('Failed to load orders');
+//   }
+// });
+
+server.get("/products", (req, res) => {
+  res.render("products");
+});
+
+
+
+server.get("/admindashboard", (req, res) =>{
+    res.render("admindashboard",{layout:false});
+});

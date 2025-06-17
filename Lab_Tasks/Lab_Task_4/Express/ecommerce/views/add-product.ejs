@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product</title>
+</head>
+<body>
+  <div style="margin-top: 130px;">
+    <h2>Add New Product</h2>
+  <% if (error) { %>
+    <p style="color:red;"><%= error %></p>
+  <% } %>
+  <form action="/add-product" method="POST">
+    <label>Image URL:</label><br>
+    <input type="text" name="imageUrl"><br><br>
+
+    <label>Title:</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Price:</label><br>
+    <input type="number" name="price" step="0.01"><br><br>
+
+    <button type="submit">Add Product</button>
+  </form>
+  </div>
+  
+</body>
+</html>

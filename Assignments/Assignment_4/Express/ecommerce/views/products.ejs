@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Styled Product Page</title>
+  <link rel="stylesheet" href="/stylesheets/style4.css">
+</head>
+<body>
+  
+
+  <% const products = [
+    { id: 1, title: 'General Tray', price: 200, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 2, title: 'Underwater Watch', price: 100, image: '/images/product2.webp' },
+    { id: 3, title: 'Union Dining Bag', price: 700, image: '/images/product2.webp' }
+  ]; %>
+
+  <div class="product-grid">
+    <% products.forEach(product => { %>
+      <div class="product-card">
+        <img src="<%= product.image %>" alt="<%= product.title %>" class="product-img">
+
+        <div class="product-info">
+          <h2 class="product-title"><%= product.title %></h2>
+          <p class="product-price">
+            $<%= product.price %> 
+          </p>
+
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="title" value="<%= product.title %>">
+            <input type="hidden" name="price" value="<%= product.price %>">
+            
+            <label for="quantity">Qty:</label>
+            <input type="number" name="quantity" value="1" min="1" class="qty-input">
+            
+            <button type="submit" class="cart-btn">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>

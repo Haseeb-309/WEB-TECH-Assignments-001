@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Products</title>
+  <style>
+    .product-card {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      margin-top: 130px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .remove-button {
+      background-color: #060606;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  .MAIN LINE {
+      margin-top: 130px;
+    }
+  </style>
+</head>
+<body>
+  
+  <% products.forEach(product => { %>
+    <div class="product-card">
+      <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+      <h3><%= product.title %></h3>
+      <p>Price: $<%= product.price %></p>
+      <form action="/delete-product/<%= product._id %>" method="POST">
+        <button type="submit" class="remove-button">Remove</button>
+      </form>
+      <a href="/edit-product/<%= product._id %>">
+  <button class="remove-button" style="background-color: #595a5b;">Edit</button>
+</a>
+    </div>
+  <% }) %>
+</body>
+</html>

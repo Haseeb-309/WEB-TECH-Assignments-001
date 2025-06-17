@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="/stylesheets/style3.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/login" method="post">
+            <h1>Login</h1>
+        
+            <input id="email" name="email" type="text" placeholder="Enter email">
+            <span class="error" id="emailError"></span>
+
+
+            <input id="password" name="password" type="password" placeholder="Enter Password">
+            <span class="error" id="passwordError"></span>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script defer src="index.js"></script>    
+</body>
+</html>

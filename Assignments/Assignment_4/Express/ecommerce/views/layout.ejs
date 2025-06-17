@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperley London</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+
+<header>    
+    <div class="container-fluid text-center bg-dark text-white pt-3 py-1">
+        <p>Unlock up to 25% off when you donate to charity - for a limited time offer</p>
+    </div>
+
+    <div class="container-fluid text-dark gx-0">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light navhover py-0">
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="/" class="navbar-brand mx-auto">
+                        <img style="width: 150px; height: 109px;" src="/images/Temperley-London-logo.png" alt="Unable to load logo">
+                    </a>
+                    <div class="collapse navbar-collapse" id="mynavbar">
+                        <ul class="navbar-nav ms-5">
+                            <li class="nav-item"><a href="/products" class="nav-link">New Arrival</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Bridal</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Interior</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="d-flex ms-auto align-items-center gap-3 nav-images">
+                        <a href="/my-orders"><img src="/images/bagfinal.jpg" alt=""></a>
+                        <img src="/images/navpin.png" alt="">
+                        <% if (user) { %>
+                            <form action="/logout" method="get">
+                                <button class="border-0 d-flex flex-row align-items-center my-0 mx-2" style="background: none";>
+                                    <span class="fw-semibold fs-8">LOGOUT</span>
+                                    <img src="/images/Assets/lock.png" alt="">
+                                </button>
+                            </form>
+                            
+                        <% } else { %>
+                            <a href="/signup"><img src="/images/person.png"" alt=""></a>
+                        <% } %>
+
+                    </div>
+
+                    <div class="search-container ms-auto">
+                        <input type="text" class="search-input" placeholder="Search...">
+                        <span class="search-icon searchicon">&#128269;</span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<%- body %>
+
+<footer class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>COMPANY</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Responsibility</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-3">
+                <h5>CUSTOMER CARE</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Package Protection</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                    <li><a href="#">Concierge Service</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Bridal FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-3">
+                <h5>OUR STORES</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">London</a></li>
+                    <li><a href="#">Somerset</a></li>
+                    <li><a href="#">Dubai</a></li>
+                    <li><a href="#">Abu Dhabi</a></li>
+                    <li><a href="#">Trunk Shows</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-3">
+                <h5>GET IN TOUCH</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Bridal Enquiries</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 social-mediaimages">
+            <img src="/images/Facebook+Icon+Black.png" alt="">
+            <img src="/images/insta.png" alt="">
+            <img src="/images/X.png" alt="">
+            <img src="/images/whatsapp.png" alt="">
+            <img src="/images/linkdin.png" alt="">
+            <img src="/images/pinterest.png" alt="">
+            <img src="/images/youtube.jpg" alt="">
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-T0m8K9a76TJf3xUHT9baC6QfkMbH6KV6pbyYf5pAs+kAIiw3k+6XbCrgGI1Z8Axs" crossorigin="anonymous"></script>
+
+</body>
+</html>
