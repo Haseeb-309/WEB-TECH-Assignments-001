@@ -9,6 +9,7 @@ connect.then(() => {
 
 
 const orderSchema = new mongoose.Schema({
+  orderId: String,
   email: String,
   address: String, 
   items: [

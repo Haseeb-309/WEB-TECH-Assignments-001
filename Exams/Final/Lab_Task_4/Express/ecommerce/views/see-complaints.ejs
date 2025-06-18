@@ -1,0 +1,13 @@
+<h1>User Complaints</h1>
+
+<ul>
+  <% complaints.forEach(c => { %>
+    <li>
+      <strong>User ID:</strong> <%= c.userId %><br>
+      <strong>Order ID:</strong> <%= c.orderId %><br>
+      <strong>Message:</strong> <%= c.message %><br>
+      <small><%= new Date(c.timestamp).toLocaleString() %></small>
+      <hr>
+    </li>
+  <% }) %>
+</ul>

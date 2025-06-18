@@ -3,6 +3,8 @@ const router = express.Router();
 const Product = require('../models/productmodel');
 const Order = require('../models/order'); 
 
+
+const Complaint = require('../models/complaint');
 router.get('/admindashboard', (req, res) => {
 
   if (!req.session.admin) {
@@ -148,6 +150,27 @@ router.get('/products', async (req, res) => {
     res.render('products', { products: [] });
   }
 });
+
+
+router.get('/see-complaints', async (req, res) => {
+  if (!req.session.admin) {
+    return res.redirect('/adminlogin');
+  }
+
+  try {
+    const complaints = await Complaint.find({}).sort({ timestamp: -1 });
+
+    res.render('see-complaints', {
+      complaints,
+      layout: false
+    });
+  } catch (error) {
+    console.error('Error fetching complaints:', error);
+    res.send('Error loading complaints');
+  }
+});
+
+
 
 
 

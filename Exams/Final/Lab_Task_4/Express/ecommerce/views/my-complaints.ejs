@@ -1,0 +1,16 @@
+<h1>My Complaints</h1>
+
+<% if (complaints.length === 0) { %>
+  <p>No complaints submitted yet.</p>
+<% } else { %>
+  <ul>
+    <% complaints.forEach(c => { %>
+      <li>
+        <strong>Order ID:</strong> <%= c.orderId %><br>
+        <strong>Message:</strong> <%= c.message %><br>
+        <small><%= new Date(c.timestamp).toLocaleString() %></small>
+        <hr>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>

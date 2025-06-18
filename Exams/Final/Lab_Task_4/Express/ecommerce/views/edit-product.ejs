@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Product</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #2ecc71;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Edit Product</h2>
+  <% if (error) { %>
+    <p class="error"><%= error %></p>
+  <% } %>
+
+  <form method="POST" action="/edit-product/<%= product._id %>">
+    <label>Title:</label>
+    <input type="text" name="title" value="<%= product.title %>">
+
+    <label>Price:</label>
+    <input type="number" name="price" value="<%= product.price %>" step="0.01">
+
+    <button type="submit">Update Product</button>
+  </form>
+</body>
+</html>

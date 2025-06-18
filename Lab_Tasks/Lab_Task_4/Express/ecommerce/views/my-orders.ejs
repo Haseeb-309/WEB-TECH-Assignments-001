@@ -155,7 +155,7 @@
         <div class="item-price">$<%= item.price.toFixed(2) %></div>
 
         <% if (item.price === 0) { %>
-          <div>1</div>
+          <div>0</div>
         <% } else { %>
           <form class="quantity-form" action="/update-quantity" method="POST">
             <input type="hidden" name="title" value="<%= item.title %>">

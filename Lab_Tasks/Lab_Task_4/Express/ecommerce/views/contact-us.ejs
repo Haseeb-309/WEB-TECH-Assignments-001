@@ -1,0 +1,19 @@
+<h1>Contact Us / Submit Complaint</h1>
+
+<% if (error) { %>
+  <p style="color:red;"><%= error %></p>
+<% } %>
+
+<% if (success) { %>
+  <p style="color:green;"><%= success %></p>
+<% } %>
+
+<form action="/submit-complaint" method="POST">
+  <label>Order ID:</label>
+  <input type="text" name="orderId" required><br><br>
+  
+  <label>Message:</label><br>
+  <textarea name="message" rows="5" cols="40" required></textarea><br><br>
+
+  <button type="submit">Submit Complaint</button>
+</form>
